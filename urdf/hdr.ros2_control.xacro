@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+<xacro:macro name="hdr_ros2_control" params="
+    name
+    robot_model:=hdr220_26
+    use_sim:=false 
+    use_mock_hardware:=false 
+    initial_positions_file:=''
+    openapi_ip:=192.168.1.150
+    openapi_port:=8888
+    ">
+    <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions'] if initial_positions_file != '' else dict(j1=0.0,j2=1.5707,j3=0.0,j4=0.0,j5=0.0,j6=0.0)}"/>
+    <ros2_control name="${name}" type="system">
+
+      <xacro:property name="sim" value="$(arg use_sim)"/>
+      <xacro:property name="mock" value="$(arg use_mock_hardware)"/>
+
+      <hardware>
+        <xacro:if value="${sim}">
+          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </xacro:if>
+        <xacro:if value="${mock}">
+          <plugin>mock_components/GenericSystem</plugin>
+        </xacro:if>
+        <xacro:unless value="${sim or mock}">
+          <plugin>hdr_hardware_interface/HDRRobotHardware</plugin>
+          <param name="robot_model">${robot_model}</param>
+          <param name="openapi_ip">$(arg openapi_ip)</param>
+          <param name="openapi_port">$(arg openapi_port)</param>
+        </xacro:unless>
+      </hardware>
+
+      <joint name="j1">
+          <command_interface name="position"/>
+          <state_interface name="position">
+            <param name="initial_value">${initial_positions['j1']}</param>
+          </state_interface>
+      </joint>
+      <joint name="j2">
+          <command_interface name="position"/>
+          <state_interface name="position">
+            <param name="initial_value">${initial_positions['j2']}</param>
+          </state_interface>
+      </joint>
+      <joint name="j3">
+          <command_interface name="position"/>
+          <state_interface name="position">
+            <param name="initial_value">${initial_positions['j3']}</param>
+          </state_interface>
+      </joint>
+      <joint name="j4">
+          <command_interface name="position"/>
+          <state_interface name="position">
+            <param name="initial_value">${initial_positions['j4']}</param>
+          </state_interface>
+      </joint>
+      <joint name="j5">
+          <command_interface name="position"/>
+          <state_interface name="position">
+            <param name="initial_value">${initial_positions['j5']}</param>
+          </state_interface>
+      </joint>
+      <joint name="j6">
+          <command_interface name="position"/>
+          <state_interface name="position">
+            <param name="initial_value">${initial_positions['j6']}</param>
+          </state_interface>
+      </joint>
+    </ros2_control>
+  </xacro:macro>
+</robot>

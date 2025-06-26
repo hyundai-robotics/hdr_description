@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<robot name="hdr_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="black">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+  <xacro:property name="mesh_scale" value="0.001" />
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="191.6327"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="5.1043" ixy="0" ixz="0" iyy="8.435" iyz="0" izz="10.0889"/>
+    </inertial>
+  </link>
+  <link name="lower_frame_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="249.1398"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="9.0293" ixy="0" ixz="0" iyy="14.5972" iyz="0" izz="15.9487"/>
+    </inertial>
+  </link>
+  <link name="upper_frame_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="109.8468"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="12.902" ixy="0" ixz="0" iyy="13.5899" iyz="0" izz="1.3022"/>
+    </inertial>
+  </link>
+  <link name="arm_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="181.1132"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.9315" ixy="0" ixz="0" iyy="19.5114" iyz="0" izz="17.6324"/>
+    </inertial>
+  </link>
+  <link name="wrist_body_link">
+    <visual>
+      <origin xyz="-0.321 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.321 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="41.8391"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.1985" ixy="0" ixz="0" iyy="0.3124" iyz="0" izz="0.3324"/>
+    </inertial>
+  </link>
+  <link name="wrist_holder_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="34.6422"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.2478" ixy="0" ixz="0" iyy="0.3039" iyz="0" izz="0.3648"/>
+    </inertial>
+  </link>
+  <link name="flange_link">
+    <visual>
+      <origin xyz="-1.535 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/flange.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin xyz="-1.535 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/flange.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.7863"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0046" ixy="0" ixz="0" iyy="0.0023" iyz="0" izz="0.0023"/>
+    </inertial>
+  </link>
+  <link name="motor_s">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/main_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/main_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <link name="motor_h">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/main_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/main_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <link name="motor_v">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/main_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/main_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <link name="motor_w1">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/wrist_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <link name="motor_w2">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/wrist_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <link name="motor_w3">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/collision/wrist_motor.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="j1" type="revolute">
+    <parent link="base_link"/>
+    <child link="lower_frame_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.142" upper="3.142" effort="3119.1" velocity="3.054"/>
+  </joint>
+  <joint name="j2" type="revolute">
+    <parent link="lower_frame_link"/>
+    <child link="upper_frame_link"/>
+    <origin xyz="0.32 0 0.48" rpy="0 1.5708 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-1.134" upper="2.967" effort="3169.68" velocity="3.054"/>
+  </joint>
+  <joint name="j3" type="revolute">
+    <parent link="upper_frame_link"/>
+    <child link="arm_link"/>
+    <origin xyz="0 0 0.87" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-1.396" upper="3.141" effort="2899.92" velocity="3.054"/>
+  </joint>
+  <joint name="j4" type="revolute">
+    <parent link="arm_link"/>
+    <child link="wrist_body_link"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-6.283" upper="6.283" effort="480.7924" velocity="4.363"/>
+  </joint>
+  <joint name="j5" type="revolute">
+    <parent link="wrist_body_link"/>
+    <child link="wrist_holder_link"/>
+    <origin xyz="1.03 0 0" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="-2.182" upper="2.182" effort="431.299" velocity="4.363"/>
+  </joint>
+  <joint name="j6" type="revolute">
+    <parent link="wrist_holder_link"/>
+    <child link="flange_link"/>
+    <origin xyz="0.185 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-6.283" upper="6.283" effort="8.024" velocity="6.109"/>
+  </joint>
+
+  <joint name="joint_motor_s" type="fixed">
+    <parent link="lower_frame_link"/>
+    <child link="motor_s"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="joint_motor_h" type="fixed">
+    <parent link="lower_frame_link"/>
+    <child link="motor_h"/>
+    <origin xyz="0.19 0.416 0.48" rpy="0 -1.5708 1.5708"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="joint_motor_v" type="fixed">
+    <parent link="arm_link"/>
+    <child link="motor_v"/>
+    <origin xyz="-0.13 0.434 0" rpy="0 -1.5708 1.5708"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="joint_motor_w1" type="fixed">
+    <parent link="arm_link"/>
+    <child link="motor_w1"/>
+    <origin xyz="-0.32 0 -1.35" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="joint_motor_w2" type="fixed">
+    <parent link="arm_link"/>
+    <child link="motor_w2"/>
+    <origin xyz="-0.32 1.553 0.173" rpy="1.5708 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="joint_motor_w3" type="fixed">
+    <parent link="arm_link"/>
+    <child link="motor_w3"/>
+    <origin xyz="-0.32 1.553 0.067" rpy="1.5708 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="base"/>
+  <joint name="base_link-base" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base"/>
+  </joint>
+  <link name="flange"/>
+  <joint name="flange_link-flange" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="flange_link"/>
+    <child link="flange"/>
+  </joint>
+  <link name="tool0"/>
+  <joint name="flange-tool0" type="fixed">
+    <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+    <parent link="flange"/>
+    <child link="tool0"/>
+  </joint>
+  
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>
