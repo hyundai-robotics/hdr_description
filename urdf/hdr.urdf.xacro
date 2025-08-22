@@ -8,7 +8,11 @@
   <xacro:arg name="hw_interface" default="" />
   <xacro:arg name="openapi_ip" default="192.168.1.150" />
   <xacro:arg name="openapi_port" default="8888" />
+  <xacro:arg name="command_port" default="8000" />
+  <xacro:arg name="command_start_time" default="-1.0" />
+  <xacro:arg name="command_buffer_size" default="2" />
   <xacro:arg name="initial_positions_file" default=""/>
+  <xacro:arg name="update_rate" default="100" /> 
 
   <xacro:property name="initial_positions_file" value="$(arg initial_positions_file)"/>
   
@@ -23,6 +27,10 @@
     initial_positions_file="$(arg initial_positions_file)"
     openapi_ip="$(arg openapi_ip)"
     openapi_port="$(arg openapi_port)"
+    command_port="$(arg command_port)"
+    command_start_time="$(arg command_start_time)"
+    command_buffer_size="$(arg command_buffer_size)"
+    update_rate="$(arg update_rate)"
   />
 
   <xacro:include filename="$(find hdr_description)/urdf/hdr_transmissions.xacro" />

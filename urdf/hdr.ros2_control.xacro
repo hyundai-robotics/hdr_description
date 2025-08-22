@@ -8,6 +8,10 @@
     initial_positions_file:=''
     openapi_ip:=192.168.1.150
     openapi_port:=8888
+    command_port:=8000
+    command_start_time:=-1.0
+    command_buffer_size:=2
+    update_rate:=100
     ">
     <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions'] if initial_positions_file != '' else dict(j1=0.0,j2=1.5707,j3=0.0,j4=0.0,j5=0.0,j6=0.0)}"/>
     <ros2_control name="${name}" type="system">
@@ -27,6 +31,10 @@
           <param name="robot_model">${robot_model}</param>
           <param name="openapi_ip">$(arg openapi_ip)</param>
           <param name="openapi_port">$(arg openapi_port)</param>
+          <param name="command_port">$(arg command_port)</param>
+          <param name="command_start_time">$(arg command_start_time)</param>
+          <param name="command_buffer_size">$(arg command_buffer_size)</param>
+          <param name="update_rate">${update_rate}</param>
         </xacro:unless>
       </hardware>
 
