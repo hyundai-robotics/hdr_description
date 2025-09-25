@@ -1,10 +1,11 @@
 # HD Hyundai Robotics Description
 
-### Table of Contents
-- [Overview](#overview)
-- [Package Structure](#package-structure)
-- [Installation](#installation)
-- [Usage](#usage)
+#### Table of Contents
+
+- [Overview](#1-overview)
+- [Package Structure](#2-package-structure)
+- [Installation](#3-installation)
+- [Usage](#4-usage)
 
 ---
 
@@ -74,7 +75,7 @@ The following launch arguments are available in `display_robot.launch.py`:
 
 | Argument Name         | Type   | Default          | Description                                                                 |
 |-----------------------|--------|------------------|-----------------------------------------------------------------------------|
-| `robot_model`         | string | `ha006b`         | HDR robot model to use. Choose from `[ha006b, hdf7_9, hdf8_8, hdr50_22, hdr220_26, hh020]` |
+| `robot_model`         | string | `ha006b`         | HDR robot model to use. Choose from `[ha006b, hdf7_9, hdf8_8, hdr10l_19, hdr20_17, hdr50_22, hdr220_26, hh020]` |
 | `description_package` | string | `hdr_description` | Package containing robot URDF/XACRO files                                  |
 | `description_file`    | string | `hdr.urdf.xacro`  | Defines the robot's URDF/XACRO configuration file                          |
 

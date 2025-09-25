@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="hdr_robot" xmlns:xacro="http://ros.org/wiki/xacro">
-  <material name="white">
-    <color rgba="1.0 1.0 1.0 1.0"/>
+  <material name="ivory">
+    <color rgba="1.0 0.945 0.773 1.0" />
   </material>
   <material name="black">
     <color rgba="0.2 0.2 0.2 1.0"/>
@@ -15,7 +15,7 @@
       <geometry>
         <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
-      <material name="white"/>
+      <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
@@ -33,7 +33,7 @@
       <geometry>
         <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
-      <material name="white"/>
+      <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
@@ -51,7 +51,7 @@
       <geometry>
         <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
-      <material name="white"/>
+      <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
@@ -70,7 +70,7 @@
       <geometry>
         <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
-      <material name="white"/>
+      <material name="ivory"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -90,7 +90,7 @@
       <geometry>
         <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
-      <material name="white"/>
+      <material name="ivory"/>
     </visual>
     <collision>
       <origin xyz="-0.321 0 0" rpy="0 0 0"/>
@@ -109,7 +109,7 @@
       <geometry>
         <mesh filename="file://$(find hdr_description)/meshes/robots/hdr50_22/visual/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
-      <material name="white"/>
+      <material name="ivory"/>
     </visual>
     <collision>
       <geometry>

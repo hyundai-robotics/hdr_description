@@ -3,153 +3,153 @@
   <material name="ivory">
     <color rgba="1.0 0.945 0.773 1.0" />
   </material>
-  <material name="gray">
-    <color rgba="0.3 0.3 0.3 1.0"/>
-  </material>
   <material name="black">
     <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.3 0.3 0.3 1.0"/>
   </material>
   <xacro:property name="mesh_scale" value="0.001" />
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/base_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="31.2543"/>
+      <mass value="56.785"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.4278" ixy="0" ixz="0" iyy="0.7085" iyz="0" izz="0.8249"/>
+      <inertia ixx="0.6488" ixy="0" ixz="0" iyy="1.1545" iyz="0" izz="1.4753"/>
     </inertial>
   </link>
   <link name="lower_frame_link">
     <visual>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/lower_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="44.2299"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1.046" ixy="0" ixz="0" iyy="1.046" iyz="0" izz="1.1643"/>
+      <inertia ixx="1.0415" ixy="0" ixz="0" iyy="1.3016" iyz="0" izz="1.163"/>
     </inertial>
   </link>
   <link name="upper_frame_link">
     <visual>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/upper_frame.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="22.4028"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1.8777" ixy="0" ixz="0" iyy="1.9502" iyz="0" izz="0.1647"/>
+      <inertia ixx="1.857" ixy="0" ixz="0" iyy="1.9503" iyz="0" izz="0.1439"/>
     </inertial>
   </link>
   <link name="arm_link">
     <visual>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="ivory"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/arm.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="14.2656"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.1905" ixy="0" ixz="0" iyy="0.2375" iyz="0" izz="0.1845"/>
+      <inertia ixx="0.1949" ixy="0" ixz="0" iyy="0.239" iyz="0" izz="0.1873"/>
     </inertial>
   </link>
   <link name="wrist_body_link">
     <visual>
-      <origin xyz="-0.162 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.16 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="ivory"/>
     </visual>
     <collision>
-      <origin xyz="-0.162 0 0" rpy="0 0 0"/>
+      <origin xyz="-0.16 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/wrist_body.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="7.0632"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.0347" ixy="0" ixz="0" iyy="0.2705" iyz="0" izz="0.281"/>
+      <inertia ixx="0.0256" ixy="0" ixz="0" iyy="0.2614" iyz="0" izz="0.2626"/>
     </inertial>
   </link>
   <link name="wrist_holder_link">
     <visual>
-      <origin xyz="0.00186 0 0.0022" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="ivory"/>
     </visual>
     <collision>
-      <origin xyz="0.00186 0 0.0022" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/wrist_holder.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="3.8171"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.0087" ixy="0" ixz="0" iyy="0.0172" iyz="0" izz="0.0182"/>
+      <inertia ixx="0.0063" ixy="0" ixz="0" iyy="0.0134" iyz="0" izz="0.0123"/>
     </inertial>
   </link>
   <link name="flange_link">
     <visual>
+      <origin xyz="-1.0906 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/flange.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/flange.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
+      <origin xyz="-1.0906 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/flange.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/flange.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
       <mass value="0.4672"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="0.0002" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      <inertia ixx="0.0003" ixy="0" ixz="0" iyy="0.0003" iyz="0" izz="0.0003"/>
     </inertial>
   </link>
   <link name="motor_s">
     <visual>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/motor_s.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/motor_s.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/motor_s.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/motor_s.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
@@ -161,13 +161,13 @@
   <link name="motor_h">
     <visual>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/motor_h.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/motor_h.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/motor_h.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/motor_h.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
@@ -178,14 +178,16 @@
   </link>
   <link name="motor_v">
     <visual>
+      <origin xyz="-0.16 0 -1.2166" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/visual/motor_v.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/visual/motor_v.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
+      <origin xyz="-0.16 0 -1.2166" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find hdr_description)/meshes/robots/hh020/collision/motor_v.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
+        <mesh filename="file://$(find hdr_description)/meshes/robots/hdr20_17/collision/motor_v.stl" scale="${mesh_scale} ${mesh_scale} ${mesh_scale}"/>
       </geometry>
     </collision>
     <inertial>
@@ -200,40 +202,40 @@
     <child link="lower_frame_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-3.229" upper="3.229" effort="962.91" velocity="3.316"/>
+    <limit lower="-3.228" upper="3.228" effort="962.9" velocity="3.316"/>
   </joint>
   <joint name="j2" type="revolute">
     <parent link="lower_frame_link"/>
     <child link="upper_frame_link"/>
-    <origin xyz="0.160 0 0.4466" rpy="0 1.5708 0"/>
+    <origin xyz="0.16 0 0.4466" rpy="0 1.5708 0"/>
     <axis xyz="0 -1 0"/>
-    <limit lower="-1.222" upper="3.403" effort="1043.28" velocity="3.142"/>
+    <limit lower="-1.221" upper="3.403" effort="1010.9" velocity="3.141"/>
   </joint>
   <joint name="j3" type="revolute">
     <parent link="upper_frame_link"/>
     <child link="arm_link"/>
-    <origin xyz="0 0 0.770" rpy="0 0 0"/>
+    <origin xyz="0 0 0.77" rpy="0 0 0"/>
     <axis xyz="0 -1 0"/>
-    <limit lower="-1.396" upper="3.141" effort="538.056" velocity="3.316"/>
+    <limit lower="-1.396" upper="3.141" effort="934.1" velocity="3.316"/>
   </joint>
   <joint name="j4" type="revolute">
     <parent link="arm_link"/>
     <child link="wrist_body_link"/>
-    <origin xyz="0 0 0.140" rpy="0 0 0"/>
+    <origin xyz="0 0 0.14" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit lower="-3.403" upper="3.403" effort="44.91" velocity="6.632"/>
+    <limit lower="-3.403" upper="3.403" effort="44.9" velocity="6.632"/>
   </joint>
   <joint name="j5" type="revolute">
     <parent link="wrist_body_link"/>
     <child link="wrist_holder_link"/>
-    <origin xyz="0.8 0 0" rpy="0 0 0"/>
+    <origin xyz="0.802 0 0" rpy="0 0 0"/>
     <axis xyz="0 -1 0"/>
-    <limit lower="-2.356" upper="2.356" effort="43.52" velocity="6.632"/>
+    <limit lower="-2.356" upper="2.356" effort="46.9" velocity="6.632"/>
   </joint>
   <joint name="j6" type="revolute">
     <parent link="wrist_holder_link"/>
     <child link="flange_link"/>
-    <origin xyz="0.112 0 0" rpy="0 0 0"/>
+    <origin xyz="0.1286 0 0" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
     <limit lower="-6.283" upper="6.283" effort="25.6" velocity="10.472"/>
   </joint>
@@ -251,9 +253,9 @@
     <axis xyz="1 0 0"/>
   </joint>
   <joint name="joint_motor_v" type="fixed">
-    <parent link="upper_frame_link"/>
+    <parent link="arm_link"/>
     <child link="motor_v"/>
-    <origin xyz="-0.16 0 -0.4466" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
   </joint>
 
@@ -275,7 +277,7 @@
     <parent link="flange"/>
     <child link="tool0"/>
   </joint>
-
+  
   <link name="world"/>
   <joint name="world_joint" type="fixed">
     <parent link="world"/>
